@@ -619,6 +619,7 @@ function page() {
             <h1 className="text-white text-center text-4xl">Our Products</h1>
 
                 <Searchbar prd={prd} />
+                
 
             <div className="w-full mt-5 flex justify-evenly items-start flex-wrap ">
 
