@@ -1,11 +1,10 @@
+export const dynamic = "force-dynamic"
 
 import { FaRegHeart } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-
-
-
+import Searchbar from "./Searchbar";
 
 function page() {
 
@@ -611,13 +610,16 @@ function page() {
             reviews: []
         }
     ]
-    const prd = productsData.splice(0, 10)
+    const prd = productsData.slice(0, 10)
 
-
+    // const prd = searchParam 
 
     return (
-        <div className="w-full min-h-screen bg-black py-35 ">
+        <div className="w-full min-h-screen bg-black py-25 ">
             <h1 className="text-white text-center text-4xl">Our Products</h1>
+
+                <Searchbar prd={prd} />
+
             <div className="w-full mt-5 flex justify-evenly items-start flex-wrap ">
 
                 {prd && prd.map((ele, idx) => (
@@ -637,10 +639,12 @@ function page() {
                             <button className='py-1 px-8 rounded-md bg-black cursor-pointer hover:scale-102 transition-all duration-200 ease-in-out active:scale-100 text-white font-bold text-xl back'>ADD TO CART</button>
                             <button className='py-1 px-3 text-2xl bg-green-500 text-white rounded-lg gx_sh  cursor-pointer hover:scale-102 active:scale-100 transition-all duration-200 ease-in-out '><FaCartShopping /></button>
                         </div>
-                    </div> 
+                    </div>
 
                 ))
                 }
+
+
             </div>
         </div>
     )
